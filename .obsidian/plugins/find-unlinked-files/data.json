@@ -1,0 +1,32 @@
+{
+  "outputFileName": "unlinked files output",
+  "disableWorkingLinks": false,
+  "directoriesToIgnore": [
+    "Ⅰ_AAA_Config_MyPC/",
+    "Ⅰ_integration_001_javaBasic/",
+    "Ⅰ_integration_002_spring/",
+    "Ⅰ_integration_003_springCloud/",
+    "Ⅰ_integration_004_linux/",
+    "Ⅰ_integration_005_ElasticSearch/",
+    "Ⅰ_integration_SSS_concat/",
+    "Ⅰ_project_001_reggie/",
+    "Ⅰ_project_002_health&kaoshi/",
+    "Ⅰ_project_003_tanhua/"
+  ],
+  "filesToIgnore": [],
+  "fileTypesToIgnore": [],
+  "linksToIgnore": [],
+  "tagsToIgnore": [],
+  "fileTypesToDelete": [],
+  "ignoreFileTypes": true,
+  "ignoreDirectories": true,
+  "unresolvedLinksOutputFileName": "unresolved links output",
+  "unresolvedLinksDirectoriesToIgnore": [],
+  "unresolvedLinksFilesToIgnore": [],
+  "unresolvedLinksFileTypesToIgnore": [],
+  "unresolvedLinksLinksToIgnore": [],
+  "unresolvedLinksTagsToIgnore": [],
+  "withoutTagsDirectoriesToIgnore": [],
+  "withoutTagsFilesToIgnore": [],
+  "withoutTagsOutputFileName": "files without tags"
+}

@@ -1,0 +1,33 @@
+要配合主题California Coast
+
+Custom Fonts>>
+Body line height : 2 编辑模式行间距
+Line width:  80 编辑框宽度
+
+
+Misc>>
+Truncate file titles : 文件名在一行
+Disable sidebar animations: 侧边栏动画关闭
+Disable tree animations : 树状列表动画关闭
+
+
+Editor Customization>>
+Flush headings: 编辑模式下立刻展示标题的效果
+Blockquotes: 编辑模式下区块引用的 > 成灰色
+Bold and italics : 编辑模式下不展示加粗和斜体效果
+Horizontal rule: 编辑模式下分割线效果展示
+Editor list bullets: 编辑模式下小标题格式统一
+Editro list indentation lines: 标记模式下显示列表缩进线
+Soft wrap code-blocks: 软包装代码块
+
+Preview Customization>>
+Enhanced Prevew Typography: 增加段落前间距
+
+Headings>>
+font size 字体尺寸
+line height 行高
+top margin 上间距
+bottom margin 下间距
+font weight 字体粗细
+
+

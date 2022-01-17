@@ -1,0 +1,172 @@
+{
+  "main": {
+    "id": "36158530ca94399a",
+    "type": "split",
+    "children": [
+      {
+        "id": "3aac1dd4027b141d",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "高级服务框架/分布式事务.md",
+            "mode": "preview"
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "1fde14943e099181",
+    "type": "split",
+    "children": [
+      {
+        "id": "d83534516a49fbef",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "5b4b466d8db2079a",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "29345518bf978237",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "tag:#全局异常",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "5127389d653a6fee",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          },
+          {
+            "id": "cb23f2d60c2c11a2",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          },
+          {
+            "id": "0ce21170621a9276",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          },
+          {
+            "id": "6588315cd8334bfc",
+            "type": "leaf",
+            "state": {
+              "type": "file-tree-view",
+              "state": {}
+            }
+          },
+          {
+            "id": "2d01bc526afc8e95",
+            "type": "leaf",
+            "state": {
+              "type": "recent-files",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 305.5
+  },
+  "right": {
+    "id": "eaafcc4feb3ef58e",
+    "type": "split",
+    "children": [
+      {
+        "id": "8afab52c5050144e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "47df3afa02bd9d58",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          },
+          {
+            "id": "c80cf3aef88f7c8d",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "高级服务框架/分布式事务.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": true,
+                "unlinkedCollapsed": false
+              }
+            }
+          },
+          {
+            "id": "ff5bc65d102c5c97",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "高级服务框架/分布式事务.md"
+              }
+            }
+          },
+          {
+            "id": "30b538cd0caa3031",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "高级服务框架/分布式事务.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "horizontal",
+    "width": 358
+  },
+  "active": "3aac1dd4027b141d",
+  "lastOpenFiles": [
+    "高级服务框架/分布式事务.md",
+    "高级服务框架/微服务保护.md",
+    "微服务保护.md",
+    "高级服务框架/assets/Pasted image 20220115231140.png.md",
+    "_resources/Pasted image 20220115231140.png",
+    "_resources/Pasted image 20220115230758.png",
+    "_resources/Pasted image 20220115232107.png",
+    "_resources/Pasted image 20220115212501.png",
+    "_resources/Pasted image 20220115210709.png",
+    "_resources/Pasted image 20220115232343.png"
+  ]
+}

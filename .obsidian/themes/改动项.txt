@@ -1,0 +1,96 @@
+#d58000 这是编辑模式下的文本颜色
+
+
+.theme-dark {
+......
+	~1505~   --accent-strong: #ff9933; 	编辑模式下加粗字体的颜色
+
+~1549
+
+  --gray-1: #5C6370;
+  --gray-2: #abb2bf;
+  --red: #e06c75;
+  --red-1: #d05a63;
+  --orange: #d19a66;
+  --orange-1: #da904b;
+  /*saddyfire标记: 在这个此green控制 文本内 字体的颜色*/
+  --green: #6A8759;
+  --darkgreen: #399a58;
+  --aqua: #56b6c2;
+  --purple: #c678dd;
+  --blue: #9dcffc;
+  --darkblue: #4889df;
+  /*saddyfire标记: 在这个此yellow控制 类名 字体的颜色*/
+  /*--yellow: #e4ba6c;*/
+  --yellow: #A9B7c6;
+  --light-yellow: #dfda91;
+  --white: #ffffff;
+
+
+
+	~1572~1579~  
+	--allow-1: #d18828;
+  	--background-blockquote: #9191911c;
+  	--background-code: #1111118c;
+  	--background-code-2: #4c4c4cc5;
+ 	 --text-color-code: #d58000;
+ 	 /*--text-color-code-normal: #e7e7e7;*/
+  	/*saffyfire标记: 代码块基础*/
+	  --text-color-code-normal: #A9B7c6;		基础代码块的字体
+
+
+	~1625_1632	6个标题的颜色
+
+/*saddyfire改的主题颜色_标题颜色1*/
+/*粉 #A12674 橙 #ff4500 黄 #A17426 紫 #9E1EB1 蓝 #2668A1 绿 #26A17A*/
+  --h1-color: #bababa;	
+  --h2-color: #A12674;
+  --h3-color: #2668A1;
+  --h4-color: #9E1EB1;
+  --h5-color: #ff4500;
+  --h6-color: #A17426;
+
+
+......
+}
+
+
+	~9643 
+	/*saddyfire标记 : 代码块注释*/
+	.token.comment {
+ 	 /*color: var(--darkgreen) !important;*/
+ 	 color: #E2199F !important;
+	}
+
+	~9648
+	/*saddyfire标记: 注解颜色*/
+	.token.punctuation {
+  	/*color: var(--gray-2) !important;*/
+ 	 color: #BBB529 !important;
+	}
+
+	~9664
+	/*saddyfire标记: 类名颜色*/
+	.token.class {
+ 	 /*color: var(--yellow);*/
+ 	 color: #A9B7c6;
+	}
+
+	~9708
+	/*saddyfire标记: 关键字颜色*/
+	.token.keyword {
+ 	 /*color: var(--purple) !important;*/
+ 	 color: #CC7832 !important; 
+	}
+
+	~9714
+	/*saddyfire标记: 方法内的颜色*/
+	.theme-dark .token.function {
+  	/*color: var(--light-yellow) !important;*/
+ 	 color: #A9B7c6 !important;
+	}
+
+
+
+
+

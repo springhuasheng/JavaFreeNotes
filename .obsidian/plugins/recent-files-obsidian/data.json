@@ -1,0 +1,206 @@
+{
+  "recentFiles": [
+    {
+      "basename": "分布式事务",
+      "path": "高级服务框架/分布式事务.md"
+    },
+    {
+      "basename": "微服务保护",
+      "path": "高级服务框架/微服务保护.md"
+    },
+    {
+      "basename": "Pasted image 20220115231140",
+      "path": "_resources/Pasted image 20220115231140.png"
+    },
+    {
+      "basename": "Pasted image 20220115230758",
+      "path": "_resources/Pasted image 20220115230758.png"
+    },
+    {
+      "basename": "Pasted image 20220115232107",
+      "path": "_resources/Pasted image 20220115232107.png"
+    },
+    {
+      "basename": "Pasted image 20220115212501",
+      "path": "_resources/Pasted image 20220115212501.png"
+    },
+    {
+      "basename": "Pasted image 20220115210709",
+      "path": "_resources/Pasted image 20220115210709.png"
+    },
+    {
+      "basename": "Pasted image 20220115232343",
+      "path": "_resources/Pasted image 20220115232343.png"
+    },
+    {
+      "basename": "conflict-files-obsidian-git",
+      "path": "conflict-files-obsidian-git.md"
+    },
+    {
+      "basename": "微服务保护",
+      "path": "高级服务框架/微服务保护/微服务保护.md"
+    },
+    {
+      "basename": "Pasted image 20220110153735",
+      "path": "_resources/Pasted image 20220110153735.png"
+    },
+    {
+      "basename": "Pasted image 20220105192257",
+      "path": "_resources/Pasted image 20220105192257.png"
+    },
+    {
+      "basename": "Pasted image 20220101133233",
+      "path": "_resources/Pasted image 20220101133233.png"
+    },
+    {
+      "basename": "bd4a053e669a49019fefd1736942f19e",
+      "path": "_resources/bd4a053e669a49019fefd1736942f19e.png"
+    },
+    {
+      "basename": "2021121901",
+      "path": "_resources/2021121901.png"
+    },
+    {
+      "basename": "187807f501b340ef8498d7de16f911c5",
+      "path": "_resources/187807f501b340ef8498d7de16f911c5.png"
+    },
+    {
+      "basename": "8d90256c688343498ab7beffdecf5a01 1",
+      "path": "_resources/8d90256c688343498ab7beffdecf5a01 1.png"
+    },
+    {
+      "basename": "4be234a05e6741fc871dace71386b6fb",
+      "path": "_resources/4be234a05e6741fc871dace71386b6fb.png"
+    },
+    {
+      "basename": "01c39a6bc3be4e6f9359b6ef62cbe5f8",
+      "path": "_resources/01c39a6bc3be4e6f9359b6ef62cbe5f8.png"
+    },
+    {
+      "basename": "0c922aaf1c5e478ba4f91b20a452c311",
+      "path": "_resources/0c922aaf1c5e478ba4f91b20a452c311.png"
+    },
+    {
+      "basename": "001 markdown常用语法",
+      "path": "Ⅰ_AAA_Config_MyPC/Ⅱ_001_instruction(obsidian)/001 markdown常用语法.md"
+    },
+    {
+      "basename": "git测试",
+      "path": "Ⅰ_AAA_Config_MyPC/Ⅰ_000_temp/git测试.md"
+    },
+    {
+      "basename": "unlinked files output",
+      "path": "unlinked files output.md"
+    },
+    {
+      "basename": "003 JWT-鉴权",
+      "path": "Ⅰ_project_003_tanhua/Ⅱ_001_环境搭建/003 JWT-鉴权.md"
+    },
+    {
+      "basename": "000 核心点",
+      "path": "Ⅰ_project_003_tanhua/Ⅱ_001_环境搭建/000 核心点.md"
+    },
+    {
+      "basename": "001 springboot_bean的制作",
+      "path": "Ⅰ_project_003_tanhua/Ⅱ_001_环境搭建/001 springboot_bean的制作.md"
+    },
+    {
+      "basename": "001 阿里云短信发送",
+      "path": "Ⅰ_project_003_tanhua/Ⅱ_001_环境搭建/001 阿里云短信发送.md"
+    },
+    {
+      "basename": "001 雪崩效应",
+      "path": "Ⅰ_integration_006_DistributeAdvance/Ⅱ_001_Sentinal/001 雪崩效应.md"
+    },
+    {
+      "basename": "002 常用命令",
+      "path": "Ⅰ_integration_004_linux/Ⅱ_001_基础知识/002 常用命令.md"
+    },
+    {
+      "basename": "001 Linux各目录介绍",
+      "path": "Ⅰ_integration_004_linux/Ⅱ_001_基础知识/001 Linux各目录介绍.md"
+    },
+    {
+      "basename": "013 简单工厂模式",
+      "path": "Ⅰ_project_003_tanhua/Ⅱ_002_技术汇总(持续更新)/013 简单工厂模式.md"
+    },
+    {
+      "basename": "012 日志_行为记录_动态监听",
+      "path": "Ⅰ_project_003_tanhua/Ⅱ_002_技术汇总(持续更新)/012 日志_行为记录_动态监听.md"
+    },
+    {
+      "basename": "011 验证码生成",
+      "path": "Ⅰ_project_003_tanhua/Ⅱ_002_技术汇总(持续更新)/011 验证码生成.md"
+    },
+    {
+      "basename": "010 Nacos配置中心",
+      "path": "Ⅰ_project_003_tanhua/Ⅱ_002_技术汇总(持续更新)/010 Nacos配置中心.md"
+    },
+    {
+      "basename": "007 redis整理",
+      "path": "Ⅰ_project_003_tanhua/Ⅱ_002_技术汇总(持续更新)/007 redis整理.md"
+    },
+    {
+      "basename": "006 stream流中list转化为map案例",
+      "path": "Ⅰ_project_003_tanhua/Ⅱ_002_技术汇总(持续更新)/006 stream流中list转化为map案例.md"
+    },
+    {
+      "basename": "005 统一异常处理",
+      "path": "Ⅰ_project_003_tanhua/Ⅱ_002_技术汇总(持续更新)/005 统一异常处理.md"
+    },
+    {
+      "basename": "004 ThreadLocal工具类",
+      "path": "Ⅰ_project_003_tanhua/Ⅱ_002_技术汇总(持续更新)/004 ThreadLocal工具类.md"
+    },
+    {
+      "basename": "002 人脸识别",
+      "path": "Ⅰ_project_003_tanhua/Ⅱ_002_技术汇总(持续更新)/002 人脸识别.md"
+    },
+    {
+      "basename": "001 OOS文件存储",
+      "path": "Ⅰ_project_003_tanhua/Ⅱ_002_技术汇总(持续更新)/001 OOS文件存储.md"
+    },
+    {
+      "basename": "000 temp",
+      "path": "Ⅰ_project_003_tanhua/Ⅱ_002_技术汇总(持续更新)/000 temp.md"
+    },
+    {
+      "basename": "001 概述",
+      "path": "Ⅰ_integration_005_ElasticSearch/Ⅱ_001_概述及安装/001 概述.md"
+    },
+    {
+      "basename": "001 索引库操作_文档操作",
+      "path": "Ⅰ_integration_005_ElasticSearch/Ⅱ_002_索引库操作/001 索引库操作_文档操作.md"
+    },
+    {
+      "basename": "002 spring基础整合",
+      "path": "Ⅰ_integration_005_ElasticSearch/Ⅱ_002_索引库操作/002 spring基础整合.md"
+    },
+    {
+      "basename": "003 查询整合",
+      "path": "Ⅰ_integration_005_ElasticSearch/Ⅱ_002_索引库操作/003 查询整合.md"
+    },
+    {
+      "basename": "002 es安装",
+      "path": "Ⅰ_integration_005_ElasticSearch/Ⅱ_001_概述及安装/002 es安装.md"
+    },
+    {
+      "basename": "001 基础操作(不重要)",
+      "path": "Ⅰ_project_003_tanhua/Ⅱ_004_MongoDB/001 基础操作(不重要).md"
+    },
+    {
+      "basename": "000 docker安装",
+      "path": "Ⅰ_project_003_tanhua/Ⅱ_004_MongoDB/000 docker安装.md"
+    },
+    {
+      "basename": "003 dozer_深克隆",
+      "path": "Ⅰ_project_003_tanhua/Ⅱ_002_技术汇总(持续更新)/003 dozer_深克隆.md"
+    },
+    {
+      "basename": "004 全局异常处理器",
+      "path": "Ⅰ_project_001_reggie/Ⅱ_002_技术汇总/004 全局异常处理器.md"
+    }
+  ],
+  "omittedPaths": [],
+  "maxLength": null
+}

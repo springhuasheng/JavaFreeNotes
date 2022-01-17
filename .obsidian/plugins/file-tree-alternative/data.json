@@ -1,0 +1,17 @@
+{
+  "ribbonIcon": true,
+  "showRootFolder": false,
+  "showFilesFromSubFolders": false,
+  "searchFunction": true,
+  "allSearchOnlyInFocusedFolder": true,
+  "showFilesFromSubFoldersButton": true,
+  "excludedExtensions": "",
+  "excludedFolders": "Ⅰ_integration_SSS_复习",
+  "folderIcon": "default",
+  "folderCount": true,
+  "folderCountOption": "notes",
+  "evernoteView": true,
+  "filePreviewOnHover": true,
+  "sortFilesBy": "name",
+  "fixedHeaderInFileList": false
+}
