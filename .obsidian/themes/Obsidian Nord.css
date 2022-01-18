@@ -28,6 +28,17 @@
     --purple: #b48ead;
 }
 
+/*修饰符颜色   eg: public static*/
+ .theme-dark .cm-keyword{
+    color: #CC7832;
+    font-weight: normal;
+ }
+ /*关键字颜色  eg: void int*/
+.theme-dark .cm-type{
+    color: #CC7832;
+    font-weight: normal;
+}
+
 .theme-dark
 {
     --background-primary:         var(--dark0);
