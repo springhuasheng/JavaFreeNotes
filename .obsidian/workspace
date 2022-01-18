@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "高级服务框架/微服务保护.md",
+            "file": "高级服务框架/分布式缓存(redis).md",
             "mode": "source",
             "source": false
           }
@@ -117,7 +117,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "高级服务框架/微服务保护.md",
+                "file": "高级服务框架/分布式缓存(redis).md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -134,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "高级服务框架/微服务保护.md"
+                "file": "高级服务框架/分布式缓存(redis).md"
               }
             }
           },
@@ -144,7 +144,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "高级服务框架/微服务保护.md",
+                "file": "高级服务框架/分布式缓存(redis).md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -159,8 +159,8 @@
   },
   "active": "3aac1dd4027b141d",
   "lastOpenFiles": [
-    "高级服务框架/微服务保护.md",
     "高级服务框架/分布式缓存(redis).md",
+    "高级服务框架/微服务保护.md",
     "高级服务框架/分布式事务.md",
     "微服务保护.md",
     "高级服务框架/assets/Pasted image 20220115231140.png.md",
