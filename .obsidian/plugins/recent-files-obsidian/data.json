@@ -1,6 +1,10 @@
 {
   "recentFiles": [
     {
+      "basename": "分布式缓存",
+      "path": "高级服务框架/分布式缓存.md"
+    },
+    {
       "basename": "分布式事务",
       "path": "高级服务框架/分布式事务.md"
     },
@@ -195,10 +199,6 @@
     {
       "basename": "003 dozer_深克隆",
       "path": "Ⅰ_project_003_tanhua/Ⅱ_002_技术汇总(持续更新)/003 dozer_深克隆.md"
-    },
-    {
-      "basename": "004 全局异常处理器",
-      "path": "Ⅰ_project_001_reggie/Ⅱ_002_技术汇总/004 全局异常处理器.md"
     }
   ],
   "omittedPaths": [],

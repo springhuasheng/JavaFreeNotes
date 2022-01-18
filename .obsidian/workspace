@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "高级服务框架/分布式事务.md",
+            "file": "高级服务框架/分布式缓存.md",
             "mode": "source"
           }
         }
@@ -116,7 +116,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "高级服务框架/分布式事务.md",
+                "file": "高级服务框架/分布式缓存.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "高级服务框架/分布式事务.md"
+                "file": "高级服务框架/分布式缓存.md"
               }
             }
           },
@@ -143,7 +143,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "高级服务框架/分布式事务.md",
+                "file": "高级服务框架/分布式缓存.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -158,6 +158,7 @@
   },
   "active": "3aac1dd4027b141d",
   "lastOpenFiles": [
+    "高级服务框架/分布式缓存.md",
     "高级服务框架/分布式事务.md",
     "高级服务框架/微服务保护.md",
     "微服务保护.md",
@@ -166,7 +167,6 @@
     "_resources/Pasted image 20220115230758.png",
     "_resources/Pasted image 20220115232107.png",
     "_resources/Pasted image 20220115212501.png",
-    "_resources/Pasted image 20220115210709.png",
-    "_resources/Pasted image 20220115232343.png"
+    "_resources/Pasted image 20220115210709.png"
   ]
 }
