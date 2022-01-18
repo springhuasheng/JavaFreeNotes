@@ -336,5 +336,170 @@ Redis提供了哨兵（Sentinel）机制来实现主从集群的自动故障恢�
 
 ### 3.1.2 集群监控原理
 
+Sentinel基于心跳机制监测服务状态，每隔1秒向集群的每个实例发送ping命令：
+
+•主观下线：如果某sentinel节点发现某实例未在规定时间响应，则认为该实例**主观下线**。
+
+•客观下线：若超过指定数量（quorum）的sentinel都认为该实例主观下线，则该实例**客观下线**。quorum值最好超过Sentinel实例数量的一半。
+
+![[Pasted image 20220118225241.png]]
+
+### 3.1.3 集群故障恢复原理
+
+一旦发现master故障，sentinel需要在salve中选择一个作为新的master，选择依据是这样的：
+
+-   首先会判断slave节点与master节点断开时间长短，如果超过指定值（down-after-milliseconds * 10）则会排除该slave节点
+    
+-   然后判断slave节点的slave-priority值，越小优先级越高，如果是0则永不参与选举
+    
+-   如果slave-prority一样，则判断slave节点的offset值，越大说明数据越新，优先级越高
+    
+-   最后是判断slave节点的运行id大小，越小优先级越高。
+    
+
+当选出一个新的master后，该如何实现切换呢？
+
+流程如下：
+
+-   sentinel给备选的slave1节点发送slaveof no one命令，让该节点成为master
+    
+-   sentinel给所有其它slave发送slaveof 192.168.150.101 7002 命令，让这些slave成为新master的从节点，开始从新的master上同步数据。
+    
+-   最后，sentinel将故障节点标记为slave，当故障节点恢复后会自动成为新的master的slave节点
+
+![[Pasted image 20220118225423.png]]
+
+### 3.1.4 小结
+
+Sentinel的三个作用是什么？
+
+-   监控
+    
+-   故障转移
+    
+-   通知
+    
+
+Sentinel如何判断一个redis实例是否健康？
+
+-   每隔1秒发送一次ping命令，如果超过一定时间没有相向则认为是主观下线
+    
+-   如果大多数sentinel都认为实例主观下线，则判定服务下线
+    
+
+故障转移步骤有哪些？
+
+-   首先选定一个slave作为新的master，执行slaveof no one
+    
+-   然后让所有节点都执行slaveof 新master
+    
+-   修改故障节点配置，添加slaveof 新master
+
+# 4. Redis分片集群
+
+## 4.1.搭建分片集群
+
+主从和哨兵可以解决高可用、高并发读的问题。但是依然有两个问题没有解决：
+
+-   海量数据存储问题
+    
+-   高并发写的问题
+    
+
+使用分片集群可以解决上述问题，如图:
+
+![[Pasted image 20220118225553.png]]
+
+分片集群特征：
+
+-   集群中有多个master，每个master保存不同数据
+    
+-   每个master都可以有多个slave节点
+    
+-   master之间通过ping监测彼此健康状态
+    
+-   客户端请求可以访问集群任意节点，最终都会被转发到正确节点
+
+## 4.2 散列插槽
+
+### 4.2.1.插槽原理
+
+Redis会把每一个master节点映射到0~16383共16384个插槽（hash slot）上，查看集群信息时就能看到：
+
+![[Pasted image 20220118225636.png]]
+
+  
+数据key不是与节点绑定，而是与插槽绑定。redis会根据key的有效部分计算插槽值，分两种情况：
+
+-   key中包含"{}"，且“{}”中至少包含1个字符，“{}”中的部分是有效部分
+    
+-   key中不包含“{}”，整个key都是有效部分
+
+例如：key是num，那么就根据num计算，如果是{itcast}num，则根据itcast计算。计算方式是利用CRC16算法得到一个hash值，然后对16384取余，得到的结果就是slot值。
+
+![[Pasted image 20220118225653.png]]
+
+如图，在7001这个节点执行set a 1时，对a做hash运算，对16384取余，得到的结果是15495，因此要存储到103节点。
+
+到了7003后，执行`get num`时，对num做hash运算，对16384取余，得到的结果是2765，因此需要切换到7001节点
+
+### 4.2.2.小结
+
+Redis如何判断某个key应该在哪个实例？
+
+-   将16384个插槽分配到不同的实例
+    
+-   根据key的有效部分计算哈希值，对16384取余
+    
+-   余数作为插槽，寻找插槽所在实例即可
+    
+
+如何将同一类数据固定的保存在同一个Redis实例？
+
+-   这一类数据使用相同的有效部分，例如key都以{typeId}为前缀
 
 
+# 5. 整和微服务
+
+## 5.1 依赖
+```xml
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-data-redis</artifactId>
+</dependency>
+```
+
+## 5.2 配置Redis地址
+```yml
+spring:
+  redis:
+    cluster:
+      nodes:
+        - 192.168.150.101:7001
+        - 192.168.150.101:7002
+        - 192.168.150.101:7003
+        - 192.168.150.101:8001
+        - 192.168.150.101:8002
+        - 192.168.150.101:8003
+```
+
+## 5.3 配置读写分离
+在项目的启动类中，添加一个新的bean：
+
+```java
+@Bean
+public LettuceClientConfigurationBuilderCustomizer clientConfigurationBuilderCustomizer(){
+    return clientConfigurationBuilder -> clientConfigurationBuilder.readFrom(ReadFrom.REPLICA_PREFERRED);
+}
+
+```
+
+这个bean中配置的就是读写策略，包括四种：
+
+-   MASTER：从主节点读取
+    
+-   MASTER_PREFERRED：优先从master节点读取，master不可用才读取replica
+    
+-   REPLICA：从slave（replica）节点读取
+    
+-   REPLICA _PREFERRED：优先从slave（replica）节点读取，所有的slave都不可用才读取master
