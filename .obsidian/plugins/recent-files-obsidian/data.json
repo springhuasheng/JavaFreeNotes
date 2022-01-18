@@ -1,16 +1,16 @@
 {
   "recentFiles": [
     {
-      "basename": "分布式缓存",
-      "path": "高级服务框架/分布式缓存.md"
+      "basename": "微服务保护",
+      "path": "高级服务框架/微服务保护.md"
+    },
+    {
+      "basename": "分布式缓存(redis)",
+      "path": "高级服务框架/分布式缓存(redis).md"
     },
     {
       "basename": "分布式事务",
       "path": "高级服务框架/分布式事务.md"
-    },
-    {
-      "basename": "微服务保护",
-      "path": "高级服务框架/微服务保护.md"
     },
     {
       "basename": "Pasted image 20220115231140",
