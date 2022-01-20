@@ -1,16 +1,20 @@
 {
   "recentFiles": [
     {
+      "basename": "多级缓存",
+      "path": "高级服务框架/多级缓存.md"
+    },
+    {
       "basename": "分布式缓存(redis)",
       "path": "高级服务框架/分布式缓存(redis).md"
     },
     {
-      "basename": "微服务保护",
-      "path": "高级服务框架/微服务保护.md"
-    },
-    {
       "basename": "分布式事务",
       "path": "高级服务框架/分布式事务.md"
+    },
+    {
+      "basename": "微服务保护",
+      "path": "高级服务框架/微服务保护.md"
     },
     {
       "basename": "Pasted image 20220115231140",
@@ -195,10 +199,6 @@
     {
       "basename": "000 docker安装",
       "path": "Ⅰ_project_003_tanhua/Ⅱ_004_MongoDB/000 docker安装.md"
-    },
-    {
-      "basename": "003 dozer_深克隆",
-      "path": "Ⅰ_project_003_tanhua/Ⅱ_002_技术汇总(持续更新)/003 dozer_深克隆.md"
     }
   ],
   "omittedPaths": [],
