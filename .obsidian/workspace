@@ -159,14 +159,14 @@
   "active": "3aac1dd4027b141d",
   "lastOpenFiles": [
     "知识串讲.md",
-    "Excalidraw/Drawing 2022-01-21 15.23.11.excalidraw.md",
-    "监听器.md",
-    "高级服务框架/RabbitMQ-高级.md",
-    "高级服务框架/多级缓存.md",
     "高级服务框架/分布式缓存(redis).md",
     "高级服务框架/分布式事务.md",
     "高级服务框架/微服务保护.md",
-    "微服务保护.md",
-    "高级服务框架/assets/Pasted image 20220115231140.png.md"
+    "高级服务框架/RabbitMQ-高级.md",
+    "_resources/spring自动加载流程与aop.png",
+    "Excalidraw/Drawing 2022-01-21 15.23.11.excalidraw.md",
+    "监听器.md",
+    "高级服务框架/多级缓存.md",
+    "微服务保护.md"
   ]
 }
