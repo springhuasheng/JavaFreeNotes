@@ -1,6 +1,10 @@
 {
   "recentFiles": [
     {
+      "basename": "RabbitMQ-高级",
+      "path": "高级服务框架/RabbitMQ-高级.md"
+    },
+    {
       "basename": "知识串讲",
       "path": "知识串讲.md"
     },
@@ -15,10 +19,6 @@
     {
       "basename": "微服务保护",
       "path": "高级服务框架/微服务保护.md"
-    },
-    {
-      "basename": "RabbitMQ-高级",
-      "path": "高级服务框架/RabbitMQ-高级.md"
     },
     {
       "basename": "spring自动加载流程与aop",
