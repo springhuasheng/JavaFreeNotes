@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "高级服务框架/多级缓存.md",
+            "file": "知识串讲.md",
             "mode": "source"
           }
         }
@@ -92,7 +92,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 305.5
+    "width": 272.5
   },
   "right": {
     "id": "eaafcc4feb3ef58e",
@@ -116,7 +116,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "高级服务框架/多级缓存.md",
+                "file": "知识串讲.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "高级服务框架/多级缓存.md"
+                "file": "知识串讲.md"
               }
             }
           },
@@ -143,7 +143,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "高级服务框架/多级缓存.md",
+                "file": "知识串讲.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -154,19 +154,19 @@
       }
     ],
     "direction": "horizontal",
-    "width": 358
+    "width": 342.5
   },
   "active": "3aac1dd4027b141d",
   "lastOpenFiles": [
+    "知识串讲.md",
+    "Excalidraw/Drawing 2022-01-21 15.23.11.excalidraw.md",
+    "监听器.md",
+    "高级服务框架/RabbitMQ-高级.md",
     "高级服务框架/多级缓存.md",
     "高级服务框架/分布式缓存(redis).md",
     "高级服务框架/分布式事务.md",
     "高级服务框架/微服务保护.md",
     "微服务保护.md",
-    "高级服务框架/assets/Pasted image 20220115231140.png.md",
-    "_resources/Pasted image 20220115231140.png",
-    "_resources/Pasted image 20220115230758.png",
-    "_resources/Pasted image 20220115232107.png",
-    "_resources/Pasted image 20220115212501.png"
+    "高级服务框架/assets/Pasted image 20220115231140.png.md"
   ]
 }

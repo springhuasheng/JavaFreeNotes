@@ -1,6 +1,14 @@
 {
   "recentFiles": [
     {
+      "basename": "知识串讲",
+      "path": "知识串讲.md"
+    },
+    {
+      "basename": "RabbitMQ-高级",
+      "path": "高级服务框架/RabbitMQ-高级.md"
+    },
+    {
       "basename": "多级缓存",
       "path": "高级服务框架/多级缓存.md"
     },
@@ -183,22 +191,6 @@
     {
       "basename": "002 spring基础整合",
       "path": "Ⅰ_integration_005_ElasticSearch/Ⅱ_002_索引库操作/002 spring基础整合.md"
-    },
-    {
-      "basename": "003 查询整合",
-      "path": "Ⅰ_integration_005_ElasticSearch/Ⅱ_002_索引库操作/003 查询整合.md"
-    },
-    {
-      "basename": "002 es安装",
-      "path": "Ⅰ_integration_005_ElasticSearch/Ⅱ_001_概述及安装/002 es安装.md"
-    },
-    {
-      "basename": "001 基础操作(不重要)",
-      "path": "Ⅰ_project_003_tanhua/Ⅱ_004_MongoDB/001 基础操作(不重要).md"
-    },
-    {
-      "basename": "000 docker安装",
-      "path": "Ⅰ_project_003_tanhua/Ⅱ_004_MongoDB/000 docker安装.md"
     }
   ],
   "omittedPaths": [],

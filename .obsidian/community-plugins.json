@@ -14,5 +14,7 @@
   "cm-editor-syntax-highlight-obsidian",
   "table-editor-obsidian",
   "oz-image-plugin",
-  "drawio-obsidian"
+  "drawio-obsidian",
+  "obsidian-mind-map",
+  "obsidian-excalidraw-plugin"
 ]

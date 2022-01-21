@@ -1,5 +1,6 @@
 {
   "attachmentFolderPath": "_resources",
   "showLineNumber": false,
-  "legacyEditor": true
+  "legacyEditor": true,
+  "promptDelete": false
 }
