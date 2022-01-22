@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "高级服务框架/RabbitMQ-高级.md",
+            "file": "拓展/RocketMQ(火箭🚀).md",
             "mode": "source"
           }
         }
@@ -116,7 +116,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "高级服务框架/RabbitMQ-高级.md",
+                "file": "拓展/RocketMQ(火箭🚀).md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "高级服务框架/RabbitMQ-高级.md"
+                "file": "拓展/RocketMQ(火箭🚀).md"
               }
             }
           },
@@ -143,7 +143,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "高级服务框架/RabbitMQ-高级.md",
+                "file": "拓展/RocketMQ(火箭🚀).md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -154,10 +154,11 @@
       }
     ],
     "direction": "horizontal",
-    "width": 282.5
+    "width": 342.5
   },
   "active": "3aac1dd4027b141d",
   "lastOpenFiles": [
+    "拓展/RocketMQ(火箭🚀).md",
     "高级服务框架/RabbitMQ-高级.md",
     "知识串讲.md",
     "Excalidraw/Drawing 2022-01-21 20.04.50.excalidraw.md",
@@ -166,7 +167,6 @@
     "高级服务框架/微服务保护.md",
     "_resources/spring自动加载流程与aop.png",
     "Excalidraw/Drawing 2022-01-21 15.23.11.excalidraw.md",
-    "监听器.md",
-    "高级服务框架/多级缓存.md"
+    "监听器.md"
   ]
 }
