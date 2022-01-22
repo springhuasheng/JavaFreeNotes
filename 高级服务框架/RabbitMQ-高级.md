@@ -321,6 +321,245 @@ public MessageRecoverer republishMessageRecoverer(RabbitTemplate rabbitTemplate)
 
 ![[Pasted image 20220121204705.png]]
 
+### 2.1.2 利用死信交换机接收死信（拓展）
+
+在失败重试策略中，默认的RejectAndDontRequeueRecoverer会在本地重试次数耗尽后，发送reject给RabbitMQ，消息变成死信，被丢弃。
+
+我们可以给simple.queue添加一个死信交换机，给死信交换机绑定一个队列。这样消息变成死信后也不会丢弃，而是最终投递到死信交换机，路由到与死信交换机绑定的队列。
+
+![[Pasted image 20220122192155.png]]
+
+示例:
+
+```java
+// 声明普通的 simple.queue队列，并且为其指定死信交换机：dl.direct
+@Bean
+public Queue simpleQueue2(){
+    return QueueBuilder.durable("simple.queue") // 指定队列名称，并持久化
+        .deadLetterExchange("dl.direct") // 指定死信交换机
+        .build();
+}
+// 声明死信交换机 dl.direct
+@Bean
+public DirectExchange dlExchange(){
+    return new DirectExchange("dl.direct", true, false);
+}
+// 声明存储死信的队列 dl.queue
+@Bean
+public Queue dlQueue(){
+    return new Queue("dl.queue", true);
+}
+// 将死信队列 与 死信交换机绑定
+@Bean
+public Binding dlBinding(){
+    return BindingBuilder.bind(dlQueue()).to(dlExchange()).with("simple");
+}
+```
+
+### 2.1.3.总结
+
+什么样的消息会成为死信？
+
+-   消息被消费者reject或者返回nack
+    
+-   消息超时未消费
+    
+-   队列满了
+    
+
+死信交换机的使用场景是什么？
+
+-   如果队列绑定了死信交换机，死信会投递到死信交换机；
+    
+-   可以利用死信交换机收集所有消费者处理失败的消息（死信），交由人工处理，进一步提高消息队列的可靠性。
+
+
+## 2.2 TTL
+
+一个队列中的消息如果超时未消费，则会变为死信，超时分为两种情况：
+
+-   消息所在的队列设置了超时时间
+    
+-   消息本身设置了超时时间
+
+![[Pasted image 20220122192340.png]]
+
+### 2.2.1 接收超时死信的死信交换机
+
+在consumer服务的SpringRabbitListener中，定义一个新的消费者，并且声明 死信交换机、死信队列：
+
+```java
+@RabbitListener(bindings = @QueueBinding(
+    value = @Queue(name = "dl.ttl.queue", durable = "true"),
+    exchange = @Exchange(name = "dl.ttl.direct"),
+    key = "ttl"
+))
+public void listenDlQueue(String msg){
+    log.info("接收到 dl.ttl.queue的延迟消息：{}", msg);
+}
+```
+
+### 2.2.2 声明一个队列，并且指定TTL
+
+要给队列设置超时时间，需要在声明队列时配置x-message-ttl属性：
+
+```java
+@Bean
+public Queue ttlQueue(){
+    return QueueBuilder.durable("ttl.queue") // 指定队列名称，并持久化
+        .ttl(10000) // 设置队列的超时时间，10秒
+        .deadLetterExchange("dl.ttl.direct") // 指定死信交换机
+        .build();
+}
+```
+
+注意，这个队列设定了死信交换机为`dl.ttl.direct`
+
+声明交换机，将ttl与交换机绑定：
+
+```java
+@Bean
+public DirectExchange ttlExchange(){
+    return new DirectExchange("ttl.direct");
+}
+@Bean
+public Binding ttlBinding(){
+    return BindingBuilder.bind(ttlQueue()).to(ttlExchange()).with("ttl");
+}
+```
+
+发送消息，但是不要指定TTL：
+
+```java
+@Test
+public void testTTLQueue() {
+    // 创建消息
+    String message = "hello, ttl queue";
+    // 消息ID，需要封装到CorrelationData中
+    CorrelationData correlationData = new CorrelationData(UUID.randomUUID().toString());
+    // 发送消息
+    rabbitTemplate.convertAndSend("ttl.direct", "ttl", message, correlationData);
+    // 记录日志
+    log.debug("发送消息成功");
+}
+```
+
+![[Pasted image 20220122192555.png]]
+
+  
+### 2.2.3 发送消息时，设定TTL
+
+在发送消息时，也可以指定TTL：
+
+```java
+@Test
+public void testTTLMsg() {
+    // 创建消息
+    Message message = MessageBuilder
+        .withBody("hello, ttl message".getBytes(StandardCharsets.UTF_8))
+        .setExpiration("5000")
+        .build();
+    // 消息ID，需要封装到CorrelationData中
+    CorrelationData correlationData = new CorrelationData(UUID.randomUUID().toString());
+    // 发送消息
+    rabbitTemplate.convertAndSend("ttl.direct", "ttl", message, correlationData);
+    log.debug("发送消息成功");
+}
+```
+
+![[Pasted image 20220122192643.png]]
+
+### 2.2.4 总结
+
+消息超时的两种方式是？
+
+-   给队列设置ttl属性，进入队列后超过ttl时间的消息变为死信
+    
+-   给消息设置ttl属性，队列接收到消息超过ttl时间后变为死信
+    
+
+如何实现发送一个消息20秒后消费者才收到消息？
+
+-   给消息的目标队列指定死信交换机
+    
+-   将消费者监听的队列绑定到死信交换机
+    
+-   发送消息时给消息设置超时时间为20秒
+
+## 2.3 延迟队列
+
+利用TTL结合死信交换机，我们实现了消息发出后，消费者延迟收到消息的效果。这种消息模式就称为延迟队列（Delay Queue）模式。
+
+延迟队列的使用场景包括：
+
+-   延迟发送短信
+    
+-   用户下单，如果用户在15 分钟内未支付，则自动取消
+    
+-   预约工作会议，20分钟后自动通知所有参会人员
+    
+
+因为延迟队列的需求非常多，所以RabbitMQ的官方也推出了一个插件，原生支持延迟队列效果。
+
+这个插件就是DelayExchange插件。参考RabbitMQ的插件列表页面：[https://www.rabbitmq.com/community-plugins.html](https://www.rabbitmq.com/community-plugins.html)
+
+![[Pasted image 20220122192743.png]]
+
+使用方式可以参考官网地址：[https://blog.rabbitmq.com/posts/2015/04/scheduling-messages-with-rabbitmq](https://blog.rabbitmq.com/posts/2015/04/scheduling-messages-with-rabbitmq)
+
+### 2.3.1 使用DelayExchange
+
+插件的使用也非常简单：声明一个交换机，交换机的类型可以是任意类型，只需要设定delayed属性为true即可，然后声明队列与其绑定即可。
+
+![[Pasted image 20220122192914.png]]
+
+![[Pasted image 20220122192923.png]]
+
+### 2.3.2 总结
+
+延迟队列插件的使用步骤包括哪些？
+
+•声明一个交换机，添加delayed属性为true
+
+•发送消息时，添加x-delay头，值为超时时间
+
+## 3.2 惰性队列
+> 一般不使用, 可修改配置文件, 达到峰值自动存储到硬盘, 而不是使用惰性队列然后接收到消息后直接存入磁盘而非内存的操作
+
+从RabbitMQ的3.6.0版本开始，就增加了Lazy Queues的概念，也就是惰性队列。惰性队列的特征如下：
+
+-   接收到消息后直接存入磁盘而非内存
+    
+-   消费者要消费消息时才会从磁盘中读取并加载到内存
+    
+-   支持数百万条的消息存储
+
+![[Pasted image 20220122193040.png]]
+
+### 3.2.1 总结
+
+消息堆积问题的解决方案？
+
+-   队列上绑定多个消费者，提高消费速度
+    
+-   使用惰性队列，可以再mq中保存更多消息
+    
+
+惰性队列的优点有哪些？
+
+-   基于磁盘存储，消息上限高
+    
+-   没有间歇性的page-out，性能比较稳定
+    
+
+惰性队列的缺点有哪些？
+
+-   基于磁盘存储，消息时效性会降低
+    
+-   性能受限于磁盘的IO
+
+
+
 
 
 
