@@ -996,6 +996,95 @@ import java.util.List;
 
 ### 3.6.2 spring-boot整合
 
+#### 3.6.2.1 生产者
+
+```java
+package com.itheima.producer.controller;  
+  
+import org.apache.rocketmq.client.producer.SendCallback;  
+import org.apache.rocketmq.client.producer.SendResult;  
+import org.apache.rocketmq.spring.core.RocketMQTemplate;  
+import org.springframework.beans.factory.annotation.Autowired;  
+import org.springframework.web.bind.annotation.GetMapping;  
+import org.springframework.web.bind.annotation.RestController;  
+  
+import java.util.Date;  
+import java.util.HashMap;  
+  
+@RestController  
+public class UserController {  
+  
+    @Autowired  
+ RocketMQTemplate mqTemplate;  
+  
+ @GetMapping("login")  
+    public String userLogin(String username, String password) {  
+        if ("tom".equalsIgnoreCase(username) && "cat".equalsIgnoreCase(password)) {  
+            HashMap<String, Object> map = new HashMap<>();  
+			 map.put("userid", 1);  
+			 map.put("ctype", 1); // 1 代表是登录  
+			 map.put("ctime", new Date());  
+ 
+			 //按顺序消费  
+			 mqTemplate.asyncSendOrderly("topic", map, "hashKey",new SendCallback() {  
+							@Override  
+			 public void onSuccess(SendResult sendResult) {  
+								System.out.println("发送消息成功");  
+			 }  
+
+							@Override  
+			 public void onException(Throwable throwable) {  
+								System.out.println("发送消息失败");  
+			 }  
+						});  
+  
+		 // 单向消息  
+		 mqTemplate.sendOneWay("topic",map);  
+
+		 //mqTemplate.sendMessageInTransaction(, , , )  
+
+		 return "登录成功";  
+		 }  
+        return "密码不对";  
+ }  
+}
+```
+
+#### 3.6.2.2 消费者
+
+```java
+package com.itheima.consumer.mq;  
+  
+  
+import com.itheima.consumer.domain.Logs;  
+import com.itheima.consumer.mapper.LogsMapper;  
+import org.apache.rocketmq.spring.annotation.ConsumeMode;  
+import org.apache.rocketmq.spring.annotation.RocketMQMessageListener;  
+import org.apache.rocketmq.spring.core.RocketMQListener;  
+import org.springframework.beans.factory.annotation.Autowired;  
+import org.springframework.stereotype.Component;  
+  
+@Component // ORDERLY为平均分配 CONCURRENTLY为广播  
+@RocketMQMessageListener(topic = "userLogs",consumerGroup = "xxx",consumeMode = ConsumeMode.ORDERLY)  
+//@RocketMQMessageListener(topic = "userLogs",consumerGroup = "xxx")  
+// 随便写一个类 实现 RocketMQListener 这个接口  
+// 这个接口中的泛型就是我们的消息类型  
+// 能够用哪个Bean去封装 JSON串  
+public class MQConsumer implements RocketMQListener<Logs> {  
+  
+    @Autowired  
+ LogsMapper logsMapper;  
+  
+ @Override  
+ public void onMessage(Logs logs) {  
+        System.out.println("logs = " + logs);  
+ // 消息的消费过程  
+ logsMapper.addLogs(logs);  
+ }  
+}
+```
+
+
 ## 3.7 事务消息
 
 - 案例提供思路, 需要清楚的获取到监听的事务状态, 来决定后面的消息是否被消费
