@@ -996,7 +996,20 @@ import java.util.List;
 
 ### 3.6.2 spring-boot整合
 
-#### 3.6.2.1 生产者
+>同步和异步Api差不多, 异步多一个回调函数
+
+#### 3.6.2.1 生产者(同步)
+
+使用Api发送同步顺序消息
+
+```java
+// 怎么保证具有相同特征的放到统一个组内  
+// 根据hashKey 可以把要保证顺序的多条消息放到同一个队列中  
+// 同步发送有顺消息
+mqTemplate.syncSendOrderly("topic",map,"hashKey");
+```
+
+#### 3.6.2.2 生产者(异步)
 
 ```java
 package com.itheima.producer.controller;  
@@ -1050,7 +1063,7 @@ public class UserController {
 }
 ```
 
-#### 3.6.2.2 消费者
+#### 3.6.2.3 消费者
 
 ```java
 package com.itheima.consumer.mq;  
