@@ -1,6 +1,18 @@
 {
   "recentFiles": [
     {
+      "basename": "添加自定义拦截器",
+      "path": "代码片段/添加自定义拦截器.md"
+    },
+    {
+      "basename": "MyBast片段",
+      "path": "代码片段/MyBast片段.md"
+    },
+    {
+      "basename": "MyBastPlus片段",
+      "path": "代码片段/MyBastPlus片段.md"
+    },
+    {
       "basename": "RocketMQ(火箭🚀)",
       "path": "拓展/RocketMQ(火箭🚀).md"
     },
@@ -187,18 +199,6 @@
     {
       "basename": "000 temp",
       "path": "Ⅰ_project_003_tanhua/Ⅱ_002_技术汇总(持续更新)/000 temp.md"
-    },
-    {
-      "basename": "001 概述",
-      "path": "Ⅰ_integration_005_ElasticSearch/Ⅱ_001_概述及安装/001 概述.md"
-    },
-    {
-      "basename": "001 索引库操作_文档操作",
-      "path": "Ⅰ_integration_005_ElasticSearch/Ⅱ_002_索引库操作/001 索引库操作_文档操作.md"
-    },
-    {
-      "basename": "002 spring基础整合",
-      "path": "Ⅰ_integration_005_ElasticSearch/Ⅱ_002_索引库操作/002 spring基础整合.md"
     }
   ],
   "omittedPaths": [],
